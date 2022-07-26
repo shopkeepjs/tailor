@@ -1,9 +1,10 @@
 <script lang="ts">
-	import Button from '$lib/Button.svelte';
-	import Icon from '$lib/Icon.svelte';
-	import ShopkeepThemeProvider from '$lib/ShopkeepThemeProvider.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import Icon from '$lib/components/Icon.svelte';
+	import ShopkeepThemeProvider from '$lib/providers/ShopkeepThemeProvider.svelte';
 </script>
 
+<h1>Welcome to SvelteKit</h1>
 <ShopkeepThemeProvider>
 	<div class="flex">
 		<Button label="Button1" onClick={() => console.log('hello1!')} size="lg" />

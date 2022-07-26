@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Sizes } from '../types';
+	import type { Sizes } from '../../types';
 	import type { SvelteComponent, SvelteComponentTyped } from 'svelte';
 
 	export let label: string;
