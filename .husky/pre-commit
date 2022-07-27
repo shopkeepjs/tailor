@@ -8,6 +8,7 @@ BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 echo Your branch is $BRANCH
 if [ $BRANCH = "development" ]; then
 npm run package
+cz
 exit 0
 fi
 
