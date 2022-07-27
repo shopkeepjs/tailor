@@ -1,7 +1,7 @@
 <script lang="ts">
 	import purple from '../themes/purple';
-	export let theme: string = 'purple';
-	export let font: string = 'Montserrat';
+	export let theme = 'purple';
+	export let font = 'Montserrat';
 
 	const setTheme = () => {
 		switch (theme) {

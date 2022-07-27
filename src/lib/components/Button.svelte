@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { Sizes } from '../../types';
-	import type { SvelteComponent, SvelteComponentTyped } from 'svelte';
+	import type { SvelteComponent } from 'svelte';
 
 	export let label: string;
 	export let size: Sizes;
-	export let onClick: () => any;
+	export let onClick: () => unknown;
 	export let iconBefore: typeof SvelteComponent | undefined = undefined;
 	export let iconAfter: typeof SvelteComponent | undefined = undefined;
-	export const loading: boolean = false;
+	export const loading = false;
 </script>
 
 <!--
