@@ -7,7 +7,6 @@ BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 echo Your branch is $BRANCH
 if [ $BRANCH = "development" ]; then
 echo 'SHOULD SEE';
-exit 1;
 fi
 
 echo 'SHOULD NOT SEE';
