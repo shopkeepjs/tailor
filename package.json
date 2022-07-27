@@ -15,7 +15,7 @@
 		"format-changelog": "prettier --w ./CHANGELOG.md",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"release": "cz",
+		"release": "git add . && cz",
 		"version-bump": "standard-version --no-verify"
 	},
 	"devDependencies": {
