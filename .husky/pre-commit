@@ -1,15 +1,15 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# npm run lint
+npm run lint
+npm test
 
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 echo Your branch is $BRANCH
 if [ $BRANCH = "development" ]; then
-echo 'SHOULD SEE';
+npm run package
+exit 0
 fi
 
 echo 'SHOULD NOT SEE';
 
-# npm test
-# npm run package
