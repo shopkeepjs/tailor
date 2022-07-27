@@ -1,15 +1,16 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint
+# npm run lint
 
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-if [[ "$BRANCH" = "development" ]]; then
-  echo 'Aborting script';
+if [[ $BRANCH = development ]]; then
+  echo 'ABORT';
   exit 1;
 fi
 
-echo 'Do stuff';
+echo $BRANCH;
+echo 'SHOULD NOT SEE';
 
-npm test
-npm run package
+# npm test
+# npm run package
