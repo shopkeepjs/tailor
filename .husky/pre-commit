@@ -4,12 +4,12 @@
 # npm run lint
 
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-if [[ $BRANCH = development ]]; then
-  echo 'ABORT';
-  exit 1;
+echo Your branch is $BRANCH
+if [ $BRANCH = "development" ]; then
+echo 'SHOULD SEE';
+exit 1;
 fi
 
-echo $BRANCH;
 echo 'SHOULD NOT SEE';
 
 # npm test
