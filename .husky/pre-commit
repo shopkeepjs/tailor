@@ -1,15 +1,35 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
+CYAN='\033[1;36m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+BOLD=$(tput bold)
+NORM=$(tput sgr0)
 
+echo "${CYAN}${BOLD}Running lint tools to check for lint errors...${NC}${NORM}"
 npm run lint
+echo "${GREEN}${BOLD}No linting errors found!${NC}${NORM}"
+echo "${CYAN}${BOLD}Testing code with playwright...${NC}${NORM}"
 npm test
+echo "${GREEN}${BOLD}Tests pass!${NC}${NORM}"
 
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 echo Your branch is $BRANCH
 if [ $BRANCH = "development" ]; then
-npm run package
+
+echo "${CYAN}${BOLD}Bumping your package version...${NC}${NORM}"
 npm run version-bump
+echo "${GREEN}${BOLD}Version bumped!${NC}${NORM}"
+echo "${CYAN}${BOLD}Formatting your CHANGELOG...${NC}${NORM}"
 npm run format-changelog
+echo "${GREEN}${BOLD}CHANGELOG formatted!${NC}${NORM}"
+echo "${CYAN}${BOLD}Packaging your app...${NC}${NORM}"
+npm run package
+echo "${GREEN}${BOLD}App packaged!${NC}${NORM}"
 fi
 
+echo "${CYAN}${BOLD}Pushing code to github${NC}${NORM}"
 git push --follow-tags origin $BRANCH
+echo "${GREEN}${BOLD}Code has been pushed to github!${NC}${NORM}"
+echo "${YELLOW}${BOLD}ℹ️ Please create a new PR to merge into either staging or development!${NC}${NORM}"
