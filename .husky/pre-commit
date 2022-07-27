@@ -12,4 +12,4 @@ npm run version-bump
 npm run format-changelog
 fi
 
-exit 0
+git push --follow-tags origin $BRANCH
