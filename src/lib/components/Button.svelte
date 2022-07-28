@@ -33,7 +33,7 @@
 			<svelte:component this={iconAfter} />
 		{/if}
 	{:else}
-		Loading...
+		Loading..
 	{/if}
 </button>
 
