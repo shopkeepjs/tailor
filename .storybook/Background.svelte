@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let mode: 'dark' | 'light';
+	export let mode: 'dark' | 'light' = 'dark';
 </script>
 
 <div class={`${mode}`}>
@@ -18,6 +18,7 @@
 		justify-content: center;
 		align-items: center;
 	}
+	/* TODO - change these colors to actual background colors */
 	.dark {
 		background-color: darkslategrey;
 	}

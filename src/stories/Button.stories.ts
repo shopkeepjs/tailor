@@ -5,6 +5,16 @@ export default {
 	component: Button
 };
 
+export const Default = {
+	render: () => ({
+		Component: Button,
+		props: {
+			label: 'Button',
+			onClick: () => null
+		}
+	})
+};
+
 export const LightPrimary = {
 	parameters: { theme: 'purple', mode: 'light' },
 	render: () => ({
