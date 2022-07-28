@@ -1,6 +1,9 @@
-import { expect, test } from '@playwright/test';
+import '@testing-library/jest-dom';
 
-test('index page has expected h1', async ({ page }) => {
-	await page.goto('/');
-	expect(await page.textContent('h1')).toBe('Welcome to SvelteKit');
+import { render } from '@testing-library/svelte';
+import { Button } from '../src/lib';
+
+it('it works', async () => {
+	const { getByText } = render(Button, { label: 'Button', onClick: () => null });
+	expect(getByText('Button')).toBeDefined();
 });

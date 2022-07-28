@@ -12,5 +12,5 @@
 		"strict": true,
 		"moduleResolution": "Node"
 	},
-	"exclude": ["src/stories", "./build/**/*"]
+	"exclude": ["src/stories", "./build/**/*", "./package/**/*"]
 }

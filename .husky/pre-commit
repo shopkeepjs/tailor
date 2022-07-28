@@ -20,9 +20,6 @@ if [ $BRANCH = "development" ]; then
     echo "${PURPLE}${BOLD}Bumping your package version...${NC}${NORM}"
     npm run version-bump
     echo "\n\n${GREEN}${BOLD}✅  Version bumped!${NC}${NORM}"
-    echo "\n${PURPLE}${BOLD}Formatting your CHANGELOG...${NC}${NORM}"
-    npm run format-changelog
-    echo "\n\n${GREEN}${BOLD}✅  CHANGELOG formatted!${NC}${NORM}"
     echo "\n${PURPLE}${BOLD}Packaging your app...${NC}${NORM}"
     npm run package
     echo "\n\n${GREEN}${BOLD}✅  App packaged!${NC}${NORM}"
