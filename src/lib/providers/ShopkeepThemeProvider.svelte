@@ -1,5 +1,6 @@
 <script lang="ts">
 	import purple from '../themes/purple';
+	import green from '../themes/green';
 	export let theme = 'purple';
 	export let font = 'Montserrat';
 
@@ -8,7 +9,7 @@
 			case 'purple':
 				return purple.mediumGradient;
 			case 'green':
-				return '--primary-100: green';
+				return green.mediumGradient;
 			default:
 				break;
 		}
