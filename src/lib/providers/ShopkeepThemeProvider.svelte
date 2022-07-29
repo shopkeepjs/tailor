@@ -1,14 +1,15 @@
 <script lang="ts">
-	import purple from './themes/purple';
-	export let theme: string = 'purple';
-	export let font: string = 'Montserrat';
+	import purple from '../themes/purple';
+	import green from '../themes/green';
+	export let theme = 'purple';
+	export let font = 'Montserrat';
 
 	const setTheme = () => {
 		switch (theme) {
 			case 'purple':
 				return purple.mediumGradient;
 			case 'green':
-				return '--primary-100: green';
+				return green.mediumGradient;
 			default:
 				break;
 		}

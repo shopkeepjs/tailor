@@ -1,13 +1,13 @@
 <script lang="ts">
-	import type { Sizes } from '../types';
-	import type { SvelteComponent, SvelteComponentTyped } from 'svelte';
+	import type { Sizes } from '../../types';
+	import type { SvelteComponent } from 'svelte';
 
 	export let label: string;
-	export let size: Sizes;
-	export let onClick: () => any;
+	export let size: Sizes = 'md';
+	export let onClick: () => unknown;
 	export let iconBefore: typeof SvelteComponent | undefined = undefined;
 	export let iconAfter: typeof SvelteComponent | undefined = undefined;
-	export const loading: boolean = false;
+	export const loading = false;
 </script>
 
 <!--
@@ -33,7 +33,7 @@
 			<svelte:component this={iconAfter} />
 		{/if}
 	{:else}
-		Loading....
+		Loading..
 	{/if}
 </button>
 
@@ -46,7 +46,7 @@
 		justify-content: center;
 		align-items: center;
 		background: var(--mediumGradient);
-		font-size: 1rem;
+		font-size: 1.5rem;
 		isolation: isolate;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		border-radius: 8px;
