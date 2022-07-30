@@ -1,19 +1,18 @@
 <script lang="ts">
-	import purple from '../themes/purple';
-	import green from '../themes/green';
+	import { colorStore } from '../themes';
 	export let theme = 'purple';
 	export let font = 'Montserrat';
 
-	const setTheme = () => {
+	const setTheme = (): string => {
 		switch (theme) {
 			case 'purple':
-				return purple.mediumGradient;
-			case 'green':
-				return green.mediumGradient;
+				colorStore.set({ ...$colorStore, prime: $colorStore.purple, complementary: $colorStore.green });
 			default:
-				break;
+				return '';
 		}
 	};
+
+	setTheme();
 </script>
 
 <svelte:head>
@@ -22,7 +21,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=${font}:wght@400;700&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<div id="shopkeep-theme-provider" style={setTheme()}><slot /></div>
+<div id="shopkeep-theme-provider"><slot /></div>
 
 <style>
 	#shopkeep-theme-provider {

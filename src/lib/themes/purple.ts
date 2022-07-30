@@ -1,4 +1,6 @@
-const purple = {
+import type { ThemeObject } from '../../types';
+
+const colors: ThemeObject = {
 	light: '#FEEFFF',
 	100: '#F7CDFF',
 	200: '#EFACFF',
@@ -12,10 +14,12 @@ const purple = {
 	1000: '#400F5E',
 	dark: '#250043',
 	lightGradient: '',
-	mediumGradient: ''
+	mediumGradient: '',
+	darkGradient: ''
 };
 
-purple.lightGradient = `--lightGradient: linear-gradient(180deg, ${purple['100']} 0%, ${purple['300']} 100%);`;
-purple.mediumGradient = `--mediumGradient: linear-gradient(180deg, ${purple['400']} 0%, ${purple['700']} 100%);`;
+colors.lightGradient = `linear-gradient(180deg, ${colors['100']} 0%, ${colors['300']} 100%);`;
+colors.mediumGradient = `linear-gradient(180deg, ${colors['400']} 0%, ${colors['700']} 100%);`;
+colors.darkGradient = `linear-gradient(180deg, ${colors['600']} 0%, ${colors['900']} 100%);`;
 
-export default purple;
+export default colors;

@@ -1,26 +1,46 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
-	import Icon from '$lib/components/Icon.svelte';
-	import ShopkeepThemeProvider from '$lib/providers/ShopkeepThemeProvider.svelte';
+	import { Button, ShopkeepThemeProvider, Flex } from '../lib';
+	import { Colors } from '../types';
+	let color: Colors = Colors.prime;
+	const doTheThing = () => {
+		color = Colors.complementary;
+	};
+	let loading = true;
+	setTimeout(() => {
+		loading = false;
+	}, 500000000);
 </script>
 
 <main>
-	<h1>Welcome to SvelteKit</h1>
 	<ShopkeepThemeProvider>
-		<div class="flex">
-			<Button label="Button1" onClick={() => console.log('hello1!')} size="lg" />
-			<Button label="Button2" onClick={() => console.log('hello2!')} size="md" />
-			<Button label="Button3" iconBefore={Icon} onClick={() => console.log('hello3!')} size="md" />
-			<Button label="Button4" onClick={() => console.log('hello4!')} size="md" iconAfter={Icon} />
-		</div>
+		<Flex
+			cs={{
+				flexFlow: 'column wrap',
+				gap: '1rem',
+				alignItems: 'center',
+				width: '100vw',
+				minHeight: '100vh',
+				backgroundColor: 'rgb(37, 32, 38)'
+			}}
+		>
+			<h1 style="color: white;">Welcome to SvelteKit</h1>
+			<Button label="Click me" onClick={doTheThing} />
+			<Button label="Loaded!" onClick={() => null} {loading} />
+			{#each [...Array(1).keys()] as _, index}
+				<Button label="Turn me green" {color} {loading} onClick={() => null} />
+			{/each}
+		</Flex>
 	</ShopkeepThemeProvider>
 </main>
 
 <style>
 	.flex {
 		display: flex;
-		flex-flow: row;
+		flex-flow: column wrap;
 		gap: 1rem;
 		align-items: center;
+		width: 100vw;
+		min-height: 100vh;
+		background-color: rgb(37, 32, 38);
 	}
 </style>
