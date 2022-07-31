@@ -1,22 +1,27 @@
 <script lang="ts">
-	import type { Sizes, Colors } from '../../types';
+	import type { Sizes, Colors, Styles } from '../types';
 	import type { SvelteComponent } from 'svelte';
-	import { colorStore } from '../themes';
+	import { colorStore, darkOrLightMode } from '../store';
 	import { Loading } from './Icons';
+	import { parse } from '../utils';
 
 	export let label: string;
 	export let size: Sizes = 'md';
 	export let variant: 'primary' | 'secondary' = 'primary';
 	export let color: 'prime' | 'complementary' | Colors = 'prime';
+	export let mode: 'dark' | 'light' = $darkOrLightMode;
 	export let onClick: () => unknown;
 	export let iconBefore: typeof SvelteComponent | undefined = undefined;
 	export let iconAfter: typeof SvelteComponent | undefined = undefined;
 	export let loading: boolean = false;
-	export let disabled: boolean = false;
+	export let disabled: boolean = loading;
+	export let cs: Styles = {};
 
-	$: backgroundGradient = `--backgroundGradient: ${$colorStore[color]?.mediumGradient};`;
-	$: lightColor = `--lightColor: ${$colorStore[color]?.light};`;
-	$: darkColor = `--darkColor: ${$colorStore[color]?.['700']};`;
+	$: mode = $darkOrLightMode;
+	$: console.log($darkOrLightMode);
+	$: backgroundGradient = `--backgroundGradient: ${$colorStore[color]?.mediumGradient}`;
+	$: textColor = `--textColor: ${$colorStore[color]?.light};`;
+	$: focusRingColor = `--focusRingColor: ${$colorStore[color]?.['700']};`;
 </script>
 
 <!--
@@ -35,8 +40,8 @@
 
 <button
 	on:click={onClick}
-	class="{size} {variant} {disabled} {loading && `disabled`}"
-	style={`${backgroundGradient} ${lightColor} ${darkColor}`}
+	class="{size} {variant} {disabled || loading ? 'disabled' : ''} {mode === 'dark' ? 'dark' : 'light'}"
+	style={`${backgroundGradient} ${textColor} ${focusRingColor} ${cs ? parse(cs) : ''} `}
 >
 	{#if !loading}
 		{#if iconBefore}
@@ -70,24 +75,40 @@
 		transition: all 0.5s;
 		min-width: 135px;
 		max-height: 50px;
-		color: var(--lightColor);
+		color: var(--textColor);
+		gap: 5px;
 	}
 
 	button:hover:not(:active, .disabled) {
 		filter: brightness(130%);
 		padding-inline: 2.3rem;
 	}
+
+	button:focus-visible {
+		padding-inline: 2.3rem;
+		outline-offset: 5px;
+		outline: 3px var(--focusRingColor) solid;
+	}
 	button:active:not(.disabled) {
 		filter: brightness(80%);
 		box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 		padding-inline: 2.3rem;
 	}
-	button:focus {
-		padding-inline: 2.3rem;
-		outline-offset: 5px;
-		outline: 3px var(--darkColor) solid;
+	.light.disabled {
+		background: rgba(44, 36, 45, 0.7);
+		background-image: linear-gradient(
+			45deg,
+			rgba(0, 0, 0, 0.25) 25%,
+			transparent 25%,
+			transparent 50%,
+			rgba(0, 0, 0, 0.25) 50%,
+			rgba(0, 0, 0, 0.25) 75%,
+			transparent 75%,
+			transparent
+		);
+		background-size: 2em 2em, auto auto;
 	}
-	.disabled {
+	.dark.disabled {
 		background: rgba(127, 120, 128, 0.25);
 		background-image: linear-gradient(
 			45deg,
@@ -99,10 +120,13 @@
 			transparent 75%,
 			transparent
 		);
-		cursor: default;
 		background-size: 2em 2em, auto auto;
+	}
+	.disabled {
+		cursor: default;
 		animation: loadingAnimation 2s linear infinite;
 	}
+
 	@keyframes loadingAnimation {
 		0% {
 			background-position: 2em 0;

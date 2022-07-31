@@ -1,18 +1,21 @@
 <script lang="ts">
 	import { Button, ShopkeepThemeProvider, Flex } from '../lib';
-	import { Colors } from '../types';
+	import { Plane } from '../lib/components/Icons';
+	import { Colors } from '../lib/types';
 	let color: Colors = Colors.prime;
+	let mode: 'dark' | 'light' = 'dark';
 	const doTheThing = () => {
 		color = Colors.complementary;
 	};
-	let loading = true;
-	setTimeout(() => {
-		loading = false;
-	}, 500000000);
+	const swapMode = () => {
+		mode = mode === 'dark' ? 'light' : 'dark';
+	};
+	const darkBackground = 'rgb(37, 32, 38)';
+	const lightBackground = 'aliceblue';
 </script>
 
 <main>
-	<ShopkeepThemeProvider>
+	<ShopkeepThemeProvider {mode}>
 		<Flex
 			cs={{
 				flexFlow: 'column wrap',
@@ -20,27 +23,16 @@
 				alignItems: 'center',
 				width: '100vw',
 				minHeight: '100vh',
-				backgroundColor: 'rgb(37, 32, 38)'
+				backgroundColor: mode === 'dark' ? darkBackground : lightBackground
 			}}
 		>
-			<h1 style="color: white;">Welcome to SvelteKit</h1>
+			<h1 style={`color: ${mode === 'dark' ? lightBackground : darkBackground}`}>Welcome to Shopkeep</h1>
+			<Button label="Swap mode" onClick={swapMode} />
 			<Button label="Click me" onClick={doTheThing} />
-			<Button label="Loaded!" onClick={() => null} {loading} />
-			{#each [...Array(1).keys()] as _, index}
-				<Button label="Turn me green" {color} {loading} onClick={() => null} />
-			{/each}
+			<Button label="Loaded!" onClick={() => null} loading={true} />
+			<Button label="Turn me green" {color} loading={true} onClick={() => null} />
+			<Button label="Send" iconBefore={Plane} onClick={() => null} />
+			<Button label="Send" {color} iconAfter={Plane} onClick={() => null} />
 		</Flex>
 	</ShopkeepThemeProvider>
 </main>
-
-<style>
-	.flex {
-		display: flex;
-		flex-flow: column wrap;
-		gap: 1rem;
-		align-items: center;
-		width: 100vw;
-		min-height: 100vh;
-		background-color: rgb(37, 32, 38);
-	}
-</style>
