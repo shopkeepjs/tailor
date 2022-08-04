@@ -2,22 +2,23 @@
 	import { onMount } from 'svelte';
 
 	import { colorStore, darkOrLightMode } from '../store';
-	export let theme = 'purple';
+	export let theme: 'purple' = 'purple';
 	export let font = 'Montserrat';
 	export let mode: 'dark' | 'light';
 
-	const setTheme = (): string => {
+	const setTheme = (): void => {
 		switch (theme) {
 			case 'purple':
 				colorStore.set({ ...$colorStore, prime: $colorStore.purple, complementary: $colorStore.green });
+				break;
 			default:
-				return '';
+				break;
 		}
 	};
 	setTheme();
 
 	onMount(async () => {
-		darkOrLightMode.set(mode || window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		mode = mode || window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 	});
 	$: darkOrLightMode.set(mode);
 </script>

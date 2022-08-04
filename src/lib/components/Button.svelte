@@ -13,15 +13,15 @@
 	export let onClick: () => unknown;
 	export let iconBefore: typeof SvelteComponent | undefined = undefined;
 	export let iconAfter: typeof SvelteComponent | undefined = undefined;
-	export let loading: boolean = false;
+	export let loading = false;
 	export let disabled: boolean = loading;
 	export let cs: Styles = {};
 
+	$: test = $colorStore[color];
 	$: mode = $darkOrLightMode;
-	$: console.log($darkOrLightMode);
 	$: backgroundGradient = `--backgroundGradient: ${$colorStore[color]?.mediumGradient}`;
 	$: textColor = `--textColor: ${$colorStore[color]?.light};`;
-	$: focusRingColor = `--focusRingColor: ${$colorStore[color]?.['700']};`;
+	$: accentColor = `--accentColor: ${$colorStore[color]?.['700']};`;
 </script>
 
 <!--
@@ -40,19 +40,22 @@
 
 <button
 	on:click={onClick}
+	aria-live="polite"
+	{disabled}
+	aria-busy={loading}
 	class="{size} {variant} {disabled || loading ? 'disabled' : ''} {mode === 'dark' ? 'dark' : 'light'}"
-	style={`${backgroundGradient} ${textColor} ${focusRingColor} ${cs ? parse(cs) : ''} `}
+	style={`${backgroundGradient} ${textColor} ${accentColor} ${cs ? parse(cs) : ''} `}
 >
 	{#if !loading}
 		{#if iconBefore}
-			<svelte:component this={iconBefore} />
+			<svelte:component this={iconBefore} ariaHidden="true" />
 		{/if}
 		{label}
 		{#if iconAfter}
-			<svelte:component this={iconAfter} />
+			<svelte:component this={iconAfter} ariaHidden="true" />
 		{/if}
 	{:else}
-		<Loading color={$colorStore[color]?.[`500`]} />
+		<Loading color={$colorStore[color]?.['700']} />
 	{/if}
 </button>
 
@@ -87,7 +90,7 @@
 	button:focus-visible {
 		padding-inline: 2.3rem;
 		outline-offset: 5px;
-		outline: 3px var(--focusRingColor) solid;
+		outline: 3px var(--accentColor) solid;
 	}
 	button:active:not(.disabled) {
 		filter: brightness(80%);

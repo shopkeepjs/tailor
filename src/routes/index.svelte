@@ -1,5 +1,7 @@
 <script lang="ts">
+	// import { Button, ShopkeepThemeProvider, Flex } from '../lib';
 	import { Button, ShopkeepThemeProvider, Flex } from '../lib';
+
 	import { Plane } from '../lib/components/Icons';
 	import { Colors } from '../lib/types';
 	let color: Colors = Colors.prime;
@@ -15,7 +17,7 @@
 </script>
 
 <main>
-	<ShopkeepThemeProvider {mode}>
+	<ShopkeepThemeProvider mode="light">
 		<Flex
 			cs={{
 				flexFlow: 'column wrap',

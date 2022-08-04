@@ -13,8 +13,8 @@
 		"moduleResolution": "Node",
 		"baseUrl": "..",
 		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"]
+			"$lib/*": ["/src/lib"],
+			"$c/*": ["src/lib"]
 		},
 		"rootDirs": ["..", "./types"],
 		"importsNotUsedAsValues": "error",

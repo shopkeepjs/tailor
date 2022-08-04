@@ -1,9 +1,19 @@
 <script lang="ts">
-	export let color: string | undefined;
+	export let color: string = 'white';
+	export let ariaHidden = false;
+
 	$: arcColor = `--arcColor: ${color}`;
 </script>
 
-<div class="loading-icon-container" style={`${arcColor}`}>
+<div
+	data-icon="loading"
+	data-testid={`icon-loading-${color}`}
+	aria-hidden={ariaHidden}
+	role="img"
+	aria-label="loading"
+	class="loading-icon-container"
+	style={`${arcColor}`}
+>
 	<div class="arc outside" />
 	<div class="arc inside" />
 </div>
