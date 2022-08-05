@@ -1,28 +1,21 @@
-<script lang="ts">
-	import type { Sizes, Styles, ColorStrings } from '../../types';
-
-	import type { SvelteComponent } from 'svelte';
-	import { colorStore, darkOrLightMode } from '../store';
-	import { Loading } from './Icons';
-
-	import { parse } from '../utils';
-
-	export let label: string;
-	export let size: Sizes = 'md';
-	export let variant: 'primary' | 'secondary' = 'primary';
-	export let color: 'prime' | 'complementary' | ColorStrings = 'prime';
-	export let mode: 'dark' | 'light' = $darkOrLightMode;
-	export let onClick: () => unknown;
-	export let iconBefore: typeof SvelteComponent | undefined = undefined;
-	export let iconAfter: typeof SvelteComponent | undefined = undefined;
-	export let loading = false;
-	export let disabled: boolean = loading;
-	export let cs: Styles = {};
-
-	$: mode = $darkOrLightMode;
-	$: backgroundGradient = `--backgroundGradient: ${$colorStore[color]?.mediumGradient}`;
-	$: textColor = `--textColor: ${$colorStore[color]?.light};`;
-	$: accentColor = `--accentColor: ${$colorStore[color]?.['700']};`;
+<script>import { colorStore, darkOrLightMode } from '../store';
+import { Loading } from './Icons';
+import { parse } from '../utils';
+export let label;
+export let size = 'md';
+export let variant = 'primary';
+export let color = 'prime';
+export let mode = $darkOrLightMode;
+export let onClick;
+export let iconBefore = undefined;
+export let iconAfter = undefined;
+export let loading = false;
+export let disabled = loading;
+export let cs = {};
+$: mode = $darkOrLightMode;
+$: backgroundGradient = `--backgroundGradient: ${$colorStore[color]?.mediumGradient}`;
+$: textColor = `--textColor: ${$colorStore[color]?.light};`;
+$: accentColor = `--accentColor: ${$colorStore[color]?.['700']};`;
 </script>
 
 <!--
