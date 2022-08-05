@@ -2,7 +2,9 @@
 	import { onMount } from 'svelte';
 
 	import { colorStore, darkOrLightMode } from '../store';
-	export let theme: 'purple' = 'purple';
+	import type { ColorStrings } from '../types';
+
+	export let theme: ColorStrings = 'purple';
 	export let font = 'Montserrat';
 	export let mode: 'dark' | 'light';
 
@@ -11,8 +13,19 @@
 			case 'purple':
 				colorStore.set({ ...$colorStore, prime: $colorStore.purple, complementary: $colorStore.green });
 				break;
-			default:
+			case 'green':
+				colorStore.set({ ...$colorStore, prime: $colorStore.green, complementary: $colorStore.purple });
 				break;
+			case 'teal':
+				colorStore.set({ ...$colorStore, prime: $colorStore.teal, complementary: $colorStore.orange });
+				break;
+			case 'orange':
+				colorStore.set({ ...$colorStore, prime: $colorStore.orange, complementary: $colorStore.teal });
+				break;
+			default:
+				((x: never) => {
+					throw new Error(`${x} was unhandled!`);
+				})(theme);
 		}
 	};
 	setTheme();

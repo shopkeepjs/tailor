@@ -1,3 +1,4 @@
+import { parameters } from '../../.storybook/preview';
 import { Button } from '../lib';
 
 export default {
@@ -16,23 +17,13 @@ export const Default = {
 };
 
 export const LightPrimary = {
-	parameters: { theme: 'purple', mode: 'light' },
+	parameters: { theme: 'green', mode: 'dark' },
 	render: () => ({
 		Component: Button,
 		props: {
 			label: 'Button',
-			onClick: () => null
-		}
-	})
-};
-
-export const DarkPrimary = {
-	parameters: { theme: 'purple', mode: 'dark' },
-	render: () => ({
-		Component: Button,
-		props: {
-			label: 'Button',
-			onClick: () => null
+			onClick: () => null,
+			color: parameters.theme
 		}
 	})
 };

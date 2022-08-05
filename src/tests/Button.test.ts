@@ -4,7 +4,7 @@ import { fireEvent, render, screen } from '@testing-library/svelte';
 import { Button } from '../lib';
 import { Plane, Loading } from '../lib/components/Icons';
 import { colorStore } from '../lib/store';
-import { purple } from '$/themes';
+import { purple } from '../lib/themes';
 
 describe('it should test the visual accuracy of the button', () => {
 	const click = jest.fn(() => null);

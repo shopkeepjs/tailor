@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 
-import { render, screen } from '@testing-library/svelte';
-import { Flex } from '../src/lib';
+import { render } from '@testing-library/svelte';
+import { Flex } from '../lib';
 
 describe('it should test the visual accuracy of the Flex', () => {
 	it('should render a Flex component', () => {

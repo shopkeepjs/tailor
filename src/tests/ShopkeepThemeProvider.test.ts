@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import '@testing-library/jest-dom';
 
-import { fireEvent, render, screen } from '@testing-library/svelte';
-import { derived, get } from 'svelte/store';
-import { Button, ShopkeepThemeProvider } from '../src/lib';
-import { Plane, Loading } from '../src/lib/components/Icons';
-import { colorStore, darkOrLightMode } from '../src/lib/store';
-import { purple, green } from '../src/lib/themes';
+import { render } from '@testing-library/svelte';
+import { get } from 'svelte/store';
+import { ShopkeepThemeProvider } from '../lib';
+import { colorStore, darkOrLightMode } from '../lib/store';
+import { purple } from '../lib/themes';
 
 describe('it should test the visual accuracy of the button', () => {
 	it('it defaults to purple when no color is provided', async () => {

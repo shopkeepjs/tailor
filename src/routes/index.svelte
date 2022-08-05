@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import { Button, ShopkeepThemeProvider, Flex } from '../lib';
 	import { Button, ShopkeepThemeProvider, Flex } from '../lib';
 
 	import { Plane } from '../lib/components/Icons';
@@ -35,6 +34,7 @@
 			<Button label="Turn me green" {color} loading={true} onClick={() => null} />
 			<Button label="Send" iconBefore={Plane} onClick={() => null} />
 			<Button label="Send" {color} iconAfter={Plane} onClick={() => null} />
+			<Button label="Green" color="orange" onClick={() => null} />
 		</Flex>
 	</ShopkeepThemeProvider>
 </main>

@@ -12,10 +12,6 @@
 		"strict": true,
 		"moduleResolution": "Node",
 		"baseUrl": "..",
-		"paths": {
-			"$lib/*": ["/src/lib"],
-			"$c/*": ["src/lib"]
-		},
 		"rootDirs": ["..", "./types"],
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,

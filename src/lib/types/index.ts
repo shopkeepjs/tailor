@@ -2,13 +2,19 @@ export type Sizes = 'sm' | 'small' | 'md' | 'medium' | 'lg' | 'large';
 export enum Colors {
 	purple = 'purple',
 	green = 'green',
+	orange = 'orange',
+	teal = 'teal',
 	complementary = 'complementary',
 	prime = 'prime'
 }
 
+export type ColorStrings = 'green' | 'purple' | 'teal' | 'orange';
+
 export interface ThemeColors {
-	purple?: ThemeObject;
-	green?: ThemeObject;
+	purple: ThemeObject;
+	green: ThemeObject;
+	orange: ThemeObject;
+	teal: ThemeObject;
 	prime?: ThemeObject;
 	complementary?: ThemeObject;
 }
