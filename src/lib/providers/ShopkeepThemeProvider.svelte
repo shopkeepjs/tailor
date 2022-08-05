@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	import { colorStore, darkOrLightMode } from '../store';
-	import type { ColorStrings } from '../types';
+	import type { ColorStrings } from '../../../types';
 
 	export let theme: ColorStrings = 'purple';
 	export let font = 'Montserrat';

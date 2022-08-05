@@ -12,7 +12,7 @@
 		"strict": true,
 		"moduleResolution": "Node",
 		"baseUrl": "..",
-		"rootDirs": ["..", "./types"],
+		"rootDirs": ["..", "src/types"],
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,
 		"preserveValueImports": true,

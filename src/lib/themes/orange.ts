@@ -1,4 +1,4 @@
-import type { ThemeObject } from '../types';
+import type { ThemeObject } from '../../types';
 
 // TODO - add light and dark greens instead of these purple
 const colors: ThemeObject = {

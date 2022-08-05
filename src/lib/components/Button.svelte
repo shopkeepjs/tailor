@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Sizes, Styles, ColorStrings } from '../types';
+	import type { Sizes, Styles, ColorStrings } from '../../../types';
 	import type { SvelteComponent } from 'svelte';
 	import { colorStore, darkOrLightMode } from '../store';
 	import { Loading } from './Icons';

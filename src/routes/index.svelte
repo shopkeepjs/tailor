@@ -2,7 +2,7 @@
 	import { Button, ShopkeepThemeProvider, Flex } from '../lib';
 
 	import { Plane } from '../lib/components/Icons';
-	import { Colors } from '../lib/types';
+	import { Colors } from '../types';
 	let color: Colors = Colors.prime;
 	let mode: 'dark' | 'light' = 'dark';
 	const doTheThing = () => {

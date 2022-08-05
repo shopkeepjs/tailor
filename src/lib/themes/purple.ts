@@ -1,4 +1,4 @@
-import type { ThemeObject } from '../types';
+import type { ThemeObject } from '../../types';
 
 const colors: ThemeObject = {
 	light: '#FEEFFF',

@@ -1,4 +1,4 @@
-import type { ThemeColors } from 'sveltekit-shopkeep/src/lib/types';
+import type { ThemeColors } from '../../types';
 import { writable, type Writable } from 'svelte/store';
 import { purple, green, teal, orange } from '../themes';
 

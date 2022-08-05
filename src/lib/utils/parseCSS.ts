@@ -1,4 +1,4 @@
-import type { Styles } from '../types';
+import type { Styles } from '../../types';
 
 interface Map {
 	[key: string]: string;

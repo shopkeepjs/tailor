@@ -6,7 +6,6 @@ import { get } from 'svelte/store';
 import { ShopkeepThemeProvider } from '../lib';
 import { colorStore, darkOrLightMode } from '../lib/store';
 import { purple } from '../lib/themes';
-import type { ThemeColors } from '../lib/types';
 
 describe('it should test the visual accuracy of the button', () => {
 	it('it defaults to purple when no color is provided', async () => {
