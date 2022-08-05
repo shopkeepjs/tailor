@@ -12,11 +12,7 @@
 		"strict": true,
 		"moduleResolution": "Node",
 		"baseUrl": "..",
-		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"]
-		},
-		"rootDirs": ["..", "./types"],
+		"rootDirs": ["..", "src/types"],
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,
 		"preserveValueImports": true,

@@ -39,7 +39,9 @@ export const globalTypes = {
 			// Array of options
 			items: [
 				{ value: 'purple', left: '🟣', title: 'purple' },
-				{ value: 'green', left: '🟢', title: 'green' }
+				{ value: 'green', left: '🟢', title: 'green' },
+				{ value: 'orange', left: '🟠', title: 'orange' },
+				{ value: 'teal', left: '🟢🔵', title: 'teal' }
 			],
 			// Property that specifies if the name of the item will be displayed
 			showName: true,

@@ -1,19 +1,39 @@
 <script lang="ts">
-	import purple from '../themes/purple';
-	import green from '../themes/green';
-	export let theme = 'purple';
-	export let font = 'Montserrat';
+	import { onMount } from 'svelte';
 
-	const setTheme = () => {
+	import { colorStore, darkOrLightMode } from '../store';
+	import type { ColorStrings } from '../../../types';
+
+	export let theme: ColorStrings = 'purple';
+	export let font = 'Montserrat';
+	export let mode: 'dark' | 'light';
+
+	const setTheme = (): void => {
 		switch (theme) {
 			case 'purple':
-				return purple.mediumGradient;
-			case 'green':
-				return green.mediumGradient;
-			default:
+				colorStore.set({ ...$colorStore, prime: $colorStore.purple, complementary: $colorStore.green });
 				break;
+			case 'green':
+				colorStore.set({ ...$colorStore, prime: $colorStore.green, complementary: $colorStore.purple });
+				break;
+			case 'teal':
+				colorStore.set({ ...$colorStore, prime: $colorStore.teal, complementary: $colorStore.orange });
+				break;
+			case 'orange':
+				colorStore.set({ ...$colorStore, prime: $colorStore.orange, complementary: $colorStore.teal });
+				break;
+			default:
+				((x: never) => {
+					throw new Error(`${x} is not a correct color choice!`);
+				})(theme);
 		}
 	};
+	setTheme();
+
+	onMount(async () => {
+		mode = mode || window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+	});
+	$: darkOrLightMode.set(mode);
 </script>
 
 <svelte:head>
@@ -22,7 +42,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=${font}:wght@400;700&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<div id="shopkeep-theme-provider" style={setTheme()}><slot /></div>
+<div id="shopkeep-theme-provider"><slot /></div>
 
 <style>
 	#shopkeep-theme-provider {

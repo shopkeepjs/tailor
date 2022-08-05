@@ -1,18 +1,19 @@
 import type { ThemeObject } from '../../types';
 
+// TODO - add light and dark greens instead of these purple
 const colors: ThemeObject = {
-	light: '#FEEFFF',
-	100: '#F7CDFF',
-	200: '#EFACFF',
-	300: '#E88AFE',
-	400: '#E068FE',
-	500: '#C559E3',
-	600: '#AB4AC9',
-	700: '#903BAE',
-	800: '#752D93',
-	900: '#5A1E78',
-	1000: '#400F5E',
-	dark: '#250043',
+	light: '#F3BAA5',
+	100: '#F3BAA5',
+	200: '#F1AC93',
+	300: '#EC906F',
+	400: '#EA825D',
+	500: '#E66E43',
+	600: '#E56638',
+	700: '#E35926',
+	800: '#D94E1C',
+	900: '#C7481A',
+	1000: '#B54117',
+	dark: '#B54117',
 	lightGradient: '',
 	mediumGradient: '',
 	darkGradient: ''
