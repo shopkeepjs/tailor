@@ -24,7 +24,7 @@
 				break;
 			default:
 				((x: never) => {
-					throw new Error(`${x} was unhandled!`);
+					throw new Error(`${x} is not a correct color choice!`);
 				})(theme);
 		}
 	};

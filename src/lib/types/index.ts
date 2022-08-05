@@ -11,10 +11,10 @@ export enum Colors {
 export type ColorStrings = 'green' | 'purple' | 'teal' | 'orange';
 
 export interface ThemeColors {
-	purple: ThemeObject;
-	green: ThemeObject;
-	orange: ThemeObject;
-	teal: ThemeObject;
+	purple?: ThemeObject;
+	green?: ThemeObject;
+	orange?: ThemeObject;
+	teal?: ThemeObject;
 	prime?: ThemeObject;
 	complementary?: ThemeObject;
 }

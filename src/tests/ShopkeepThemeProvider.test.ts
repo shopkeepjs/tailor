@@ -6,6 +6,7 @@ import { get } from 'svelte/store';
 import { ShopkeepThemeProvider } from '../lib';
 import { colorStore, darkOrLightMode } from '../lib/store';
 import { purple } from '../lib/themes';
+import type { ThemeColors } from '../lib/types';
 
 describe('it should test the visual accuracy of the button', () => {
 	it('it defaults to purple when no color is provided', async () => {
@@ -22,11 +23,15 @@ describe('it should test the visual accuracy of the button', () => {
 		// @ts-ignore - NOTE - I know better than typescript, because it doesn't know if the store is validated
 		expect(color?.prime['100']).toEqual(color?.purple['100']);
 	});
-	it('it does not apply a prime color when provided with an incorrect color theme', async () => {
-		colorStore.set({ purple: { ...purple, '100': '#F7CDFF' } });
-		render(ShopkeepThemeProvider, { theme: 'testfail', mode: 'dark' });
-		const color = get(colorStore);
-		expect(color?.prime).toBeUndefined();
+	it('it throws an error when provided with an incorrect color theme', async () => {
+		try {
+			colorStore.set({ purple: { ...purple, '100': '#F7CDFF' } });
+			render(ShopkeepThemeProvider, { theme: 'testfail', mode: 'dark' });
+		} catch (error: unknown) {
+			if (error && error instanceof Error) {
+				expect(error.message).toBe('testfail is not a correct color choice!');
+			}
+		}
 	});
 
 	it('should change store to "dark" based on users preferred color scheme', () => {

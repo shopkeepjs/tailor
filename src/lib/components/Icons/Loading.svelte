@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let color: string = 'white';
+	export let color = 'white';
 	export let ariaHidden = false;
 
 	$: arcColor = `--arcColor: ${color}`;
