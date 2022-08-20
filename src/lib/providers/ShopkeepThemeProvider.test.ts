@@ -3,9 +3,9 @@ import '@testing-library/jest-dom';
 
 import { render } from '@testing-library/svelte';
 import { get } from 'svelte/store';
-import { ShopkeepThemeProvider } from '../lib';
-import { colorStore, darkOrLightMode } from '../lib/store';
-import { purple } from '../lib/themes';
+import ShopkeepThemeProvider from './ShopkeepThemeProvider.svelte';
+import { colorStore, darkOrLightMode } from '../store';
+import { purple } from '../themes';
 
 describe('it should test the visual accuracy of the button', () => {
 	it('it defaults to purple when no color is provided', async () => {

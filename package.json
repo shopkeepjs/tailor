@@ -1,6 +1,6 @@
 {
 	"name": "@samwise-app/shopkeep",
-	"version": "0.4.13",
+	"version": "0.5.1",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
