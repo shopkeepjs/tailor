@@ -2,6 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<<<<<<< HEAD
 ### [0.5.1](https://github.com/samwise-app/shopkeep/compare/v0.5.0...v0.5.1) (2022-08-20)
 
 ## [0.5.0](https://github.com/samwise-app/shopkeep/compare/v0.4.7...v0.5.0) (2022-08-20)
@@ -35,6 +36,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 * minor release for button component (#12) ([ad516f0](https://github.com/samwise-app/shopkeep/commit/ad516f0e27e7f101177c061f57e06bdd47c90813)), closes [#12](https://github.com/samwise-app/shopkeep/issues/12) [#2](https://github.com/samwise-app/shopkeep/issues/2) [#3](https://github.com/samwise-app/shopkeep/issues/3) [#5](https://github.com/samwise-app/shopkeep/issues/5) [#10](https://github.com/samwise-app/shopkeep/issues/10)
 
+=======
+>>>>>>> 0ac9f468045bd69b0bab555bd282420aed62eb0c
 ### [0.4.13](https://github.com/samwise-app/shopkeep/compare/v0.4.7...v0.4.13) (2022-08-05)
 
 ### [0.4.12](https://github.com/samwise-app/shopkeep/compare/v0.4.7...v0.4.12) (2022-08-05)
