@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { Sizes, Styles, ColorStrings } from '../../types';
+	import type { Sizes, Styles, ColorStrings } from '../../../types';
 
 	import type { SvelteComponent } from 'svelte';
-	import { colorStore, darkOrLightMode } from '../store';
-	import { Loading } from './Icons';
+	import { colorStore, darkOrLightMode } from '../../store';
+	import { Loading } from '../../assets/Icons';
 
-	import { parse } from '../utils';
+	import { parse } from '../../utils';
 
 	export let label: string;
 	export let size: Sizes = 'md';

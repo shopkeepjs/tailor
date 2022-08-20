@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, ShopkeepThemeProvider, Flex } from '../lib';
 
-	import { Plane } from '../lib/components/Icons';
+	import { Plane } from '../lib/assets/Icons';
 	import { Colors } from '../types';
 	let color: Colors = Colors.prime;
 	let mode: 'dark' | 'light' = 'dark';
