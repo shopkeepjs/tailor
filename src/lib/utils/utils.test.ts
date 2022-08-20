@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { parse } from '../lib/utils';
+import { parse } from './parseCSS';
 
 describe('it should test all utility functions used', () => {
 	it('should parse camel case object properties to hypen case CSS properties', () => {
