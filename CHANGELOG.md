@@ -2,6 +2,109 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/samwise-app/shopkeep/compare/v0.6.1...v0.7.0) (2022-08-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* Need to npm ci
+
+* test
+
+* chore(release): 0.4.0
+
+* chore(release): 0.4.1
+
+* chore(release): 0.4.2
+
+* chore(release): 0.4.3
+
+* stashing changes
+
+* added git push
+
+* added hook messages
+
+* more work on the pre-commit hook
+
+* more work on the pre-commit hook
+
+* more work on the pre-commit hook
+* Need to npm ci
+
+* test
+
+* chore(release): 0.4.0
+
+* chore(release): 0.4.1
+
+* chore(release): 0.4.2
+
+* chore(release): 0.4.3
+
+* stashing changes
+
+* added git push
+
+* added hook messages
+
+* more work on the pre-commit hook
+
+* more work on the pre-commit hook
+
+* more work on the pre-commit hook
+* Need to npm ci
+
+* test
+
+* chore(release): 0.4.0
+
+* chore(release): 0.4.1
+
+* chore(release): 0.4.2
+
+* chore(release): 0.4.3
+
+* stashing changes
+
+* added git push
+
+* added hook messages
+
+* more work on the pre-commit hook
+
+* more work on the pre-commit hook
+
+* more work on the pre-commit hook
+* Need to npm ci
+
+* test
+
+* chore(release): 0.4.0
+
+* chore(release): 0.4.1
+
+* chore(release): 0.4.2
+
+* chore(release): 0.4.3
+
+* stashing changes
+
+* added git push
+
+* added hook messages
+
+* more work on the pre-commit hook
+
+* more work on the pre-commit hook
+
+* more work on the pre-commit hook
+
+* 22 add box shadow predefined inputs (#23) ([8aca810](https://github.com/samwise-app/shopkeep/commit/8aca8109e7974c0b260f97685af666e626fa4440)), closes [#23](https://github.com/samwise-app/shopkeep/issues/23) [#21](https://github.com/samwise-app/shopkeep/issues/21) [#2](https://github.com/samwise-app/shopkeep/issues/2) [#3](https://github.com/samwise-app/shopkeep/issues/3) [#5](https://github.com/samwise-app/shopkeep/issues/5) [#10](https://github.com/samwise-app/shopkeep/issues/10) [#14](https://github.com/samwise-app/shopkeep/issues/14) [#18](https://github.com/samwise-app/shopkeep/issues/18)
+* Development (#21) ([f5ece04](https://github.com/samwise-app/shopkeep/commit/f5ece04f9dece4d7978f5686e74fe34e8d7823a5)), closes [#21](https://github.com/samwise-app/shopkeep/issues/21) [#2](https://github.com/samwise-app/shopkeep/issues/2) [#3](https://github.com/samwise-app/shopkeep/issues/3) [#5](https://github.com/samwise-app/shopkeep/issues/5) [#10](https://github.com/samwise-app/shopkeep/issues/10) [#14](https://github.com/samwise-app/shopkeep/issues/14) [#18](https://github.com/samwise-app/shopkeep/issues/18)
+* Development (#20) ([bcebbb0](https://github.com/samwise-app/shopkeep/commit/bcebbb0f5b921eeeb760cbe5743d09dfa30d20a8)), closes [#20](https://github.com/samwise-app/shopkeep/issues/20) [#2](https://github.com/samwise-app/shopkeep/issues/2) [#3](https://github.com/samwise-app/shopkeep/issues/3) [#5](https://github.com/samwise-app/shopkeep/issues/5) [#10](https://github.com/samwise-app/shopkeep/issues/10) [#14](https://github.com/samwise-app/shopkeep/issues/14) [#18](https://github.com/samwise-app/shopkeep/issues/18)
+* Development (#19) ([3ccf830](https://github.com/samwise-app/shopkeep/commit/3ccf830e805a6e704efd6f582b565247a5d44adc)), closes [#19](https://github.com/samwise-app/shopkeep/issues/19) [#2](https://github.com/samwise-app/shopkeep/issues/2) [#3](https://github.com/samwise-app/shopkeep/issues/3) [#5](https://github.com/samwise-app/shopkeep/issues/5) [#10](https://github.com/samwise-app/shopkeep/issues/10) [#14](https://github.com/samwise-app/shopkeep/issues/14) [#18](https://github.com/samwise-app/shopkeep/issues/18)
+
 ### [0.6.1](https://github.com/samwise-app/shopkeep/compare/v0.6.0...v0.6.1) (2022-08-21)
 
 ## [0.6.0](https://github.com/samwise-app/shopkeep/compare/v0.5.1...v0.6.0) (2022-08-20)

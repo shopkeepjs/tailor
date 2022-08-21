@@ -44,4 +44,5 @@ export type Styles = {
 	width?: string;
 	minHeight?: string;
 	backgroundColor?: string;
+	boxShadow?: string;
 };
