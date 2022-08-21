@@ -10,4 +10,4 @@ const colors: ThemeColors = {
 };
 
 export const colorStore = writable(colors);
-export const darkOrLightMode: Writable<'dark' | 'light'> = writable('dark');
+export const polarity: Writable<'dark' | 'light'> = writable('dark');

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import { colorStore, darkOrLightMode } from '../store';
-	import type { ColorStrings } from '../../../types';
+	import { colorStore, polarity } from '../store';
+	import type { ColorStrings } from '../../types';
 
 	export let theme: ColorStrings = 'purple';
 	export let font = 'Montserrat';
-	export let mode: 'dark' | 'light';
+	export let mode: 'dark' | 'light' | null = null;
 
 	const setTheme = (): void => {
 		switch (theme) {
@@ -31,9 +31,8 @@
 	setTheme();
 
 	onMount(async () => {
-		mode = mode || window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+		polarity.set(mode || window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 	});
-	$: darkOrLightMode.set(mode);
 </script>
 
 <svelte:head>
