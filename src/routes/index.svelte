@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Button, ShopkeepThemeProvider, Flex } from '../lib';
-
+	import { Button, ShopkeepThemeProvider, Flex, Box } from '../lib';
 	import { Plane } from '../lib/assets/Icons';
 	import { Colors } from '../types';
 	let color: Colors = Colors.prime;
@@ -35,6 +34,7 @@
 			<Button label="Send" iconBefore={Plane} onClick={() => null} />
 			<Button label="Send" {color} iconAfter={Plane} onClick={() => null} />
 			<Button label="Green" color="orange" onClick={() => null} />
+			<Box cs={{ width: '200px', minHeight: '200px', backgroundColor: 'green', boxShadow: 'high' }} />
 		</Flex>
 	</ShopkeepThemeProvider>
 </main>
