@@ -1,1 +1,1 @@
-export { colorStore, darkOrLightMode } from './theme';
+export { colorStore, polarity } from './theme';

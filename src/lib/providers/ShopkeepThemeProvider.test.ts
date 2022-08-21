@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/svelte';
 import { get } from 'svelte/store';
 import ShopkeepThemeProvider from './ShopkeepThemeProvider.svelte';
-import { colorStore, darkOrLightMode } from '../store';
+import { colorStore, polarity } from '../store';
 import { purple } from '../themes';
 
 describe('it should test the visual accuracy of the button', () => {
@@ -35,26 +35,18 @@ describe('it should test the visual accuracy of the button', () => {
 
 	it('should change store to "dark" based on users preferred color scheme', () => {
 		window.matchMedia = jest.fn().mockImplementation((query) => ({
-			matches: query === '(prefers-color-scheme: dark)',
-			media: '',
-			onchange: null,
-			addListener: jest.fn(),
-			removeListener: jest.fn()
+			matches: query === '(prefers-color-scheme: dark)'
 		}));
 		render(ShopkeepThemeProvider);
-		const mode = get(darkOrLightMode);
+		const mode = get(polarity);
 		expect(mode).toEqual('dark');
 	});
 	it('should change store to "light" based on users preferred color scheme', () => {
 		window.matchMedia = jest.fn().mockImplementation((query) => ({
-			matches: query === '(prefers-color-scheme: light)',
-			media: '',
-			onchange: null,
-			addListener: jest.fn(),
-			removeListener: jest.fn()
+			matches: query === '(prefers-color-scheme: light)'
 		}));
 		render(ShopkeepThemeProvider);
-		const mode = get(darkOrLightMode);
+		const mode = get(polarity);
 		expect(mode).toEqual('light');
 	});
 });
