@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { Sizes, Styles, ColorStrings } from '../../../types';
 	import type { SvelteComponent } from 'svelte';
+<<<<<<< HEAD:src/lib/components/Button/Button.svelte
 	import { colorStore, polarity } from '../../store';
+=======
+	import { colorStore, darkOrLightMode } from '../../store';
+>>>>>>> 3ccf830e805a6e704efd6f582b565247a5d44adc:src/lib/components/Button.svelte
 	import { Loading } from '../../assets/Icons';
 
 	import { parse } from '../../utils';
