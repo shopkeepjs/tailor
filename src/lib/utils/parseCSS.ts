@@ -23,6 +23,10 @@ const typeGuard = <T extends string>(value: string, arrayToCompare: readonly str
 	return arrayToCompare.includes(value);
 };
 
+type BoxShadow = 'low' | 'medium' | 'high';
+
+const isPredefinedBoxShadow = (key: string): key is BoxShadow => ['low', 'medium', 'high'].includes(key);
+
 export const parse = (styles: Styles) => {
 	return Object.entries(styles).reduce((str: string, [key, value]: [string, unknown]) => {
 		if (key === 'boxShadow' && typeof value === 'string' && typeGuard<Volume>(value, volumes))
