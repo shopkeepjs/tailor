@@ -149,7 +149,7 @@ const camelToKebab: Map = {
 	wordSpacing: 'word-spacing',
 	wordWrap: 'word-wrap',
 	writingMode: 'writing-mode',
-	zIndex: 'z-index',
+	zIndex: 'z-index'
 };
 
 const boxShadowLookup = {
