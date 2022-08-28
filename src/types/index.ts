@@ -49,6 +49,5 @@ export type Styles = {
 	width?: string;
 	minHeight?: string;
 	backgroundColor?: string;
-	boxShadow?: LiteralUnion<Volume>;
-	active?: Styles;
+	boxShadow?: string;
 };
