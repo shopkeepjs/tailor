@@ -43,7 +43,8 @@
 	aria-live="polite"
 	{disabled}
 	aria-busy={loading}
-	class="{size} {variant} {disabled || loading ? 'disabled' : ''} {mode === 'dark' ? 'dark' : 'light'}"
+	class:disabled={disabled || loading}
+	class="{size} {variant} {mode === 'dark' ? 'dark' : 'light'}"
 	style={`${backgroundGradient} ${textColor} ${accentColor} ${cs ? parse(cs) : ''} `}
 >
 	{#if !loading}

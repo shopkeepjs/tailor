@@ -1,3 +1,5 @@
+type LiteralUnion<T extends string | number> = T | Omit<T, T>;
+
 export type Sizes = 'sm' | 'small' | 'md' | 'medium' | 'lg' | 'large';
 export enum Colors {
 	purple = 'purple',
@@ -7,6 +9,9 @@ export enum Colors {
 	complementary = 'complementary',
 	prime = 'prime'
 }
+
+export const volumes = ['low', 'medium', 'high'] as const;
+export type Volume = typeof volumes[number];
 
 export type ColorStrings = 'green' | 'purple' | 'teal' | 'orange';
 
@@ -44,5 +49,6 @@ export type Styles = {
 	width?: string;
 	minHeight?: string;
 	backgroundColor?: string;
-	boxShadow?: string;
+	boxShadow?: LiteralUnion<Volume>;
+	active?: Styles;
 };

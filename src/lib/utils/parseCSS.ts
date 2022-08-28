@@ -1,4 +1,5 @@
-import type { Styles } from '../../types';
+import type { Styles, Volume } from '../../types';
+import { volumes } from '../../types';
 
 interface Map {
 	[key: string]: string;
@@ -17,13 +18,14 @@ const boxShadowLookup = {
 	high: '13px 13px 13px -5px rgba(0, 0, 0, 0.5);'
 };
 
-type BoxShadow = 'low' | 'medium' | 'high';
-
-const isPredefinedBoxShadow = (key: string): key is BoxShadow => ['low', 'medium', 'high'].includes(key);
+const typeGuard = <T extends string>(value: string, arrayToCompare: readonly string[]): value is T => {
+	if (typeof value !== 'string') return false;
+	return arrayToCompare.includes(value);
+};
 
 export const parse = (styles: Styles) => {
-	return Object.entries(styles).reduce((str: string, [key, value]: [string, string | number]) => {
-		if (key === 'boxShadow' && typeof value === 'string' && isPredefinedBoxShadow(value))
+	return Object.entries(styles).reduce((str: string, [key, value]: [string, unknown]) => {
+		if (key === 'boxShadow' && typeof value === 'string' && typeGuard<Volume>(value, volumes))
 			return (str += `box-shadow: ${boxShadowLookup[value]};`);
 		return (str += `${camelToCSS[key] ? camelToCSS[key] : key}: ${value};`);
 	}, '');
