@@ -34,7 +34,7 @@
 			<Button label="Send" iconBefore={Plane} onClick={() => null} />
 			<Button label="Send" {color} iconAfter={Plane} onClick={() => null} />
 			<Button label="Green" color="orange" onClick={() => null} />
-			<Box cs={{ width: '200px', minHeight: '200px', backgroundColor: 'green', boxShadow: 'high' }} />
+			<Box cs={{ width: '200px', minHeight: '200px', backgroundColor: 'green', boxShadow: 'high', height: '200px' }} />
 		</Flex>
 	</ShopkeepThemeProvider>
 </main>
