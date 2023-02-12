@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook", 
+    "build-storybook": "build-storybook",
     "lint": "eslint './src/**/*.{js,ts,svelte}'"
   },
   "devDependencies": {
@@ -42,6 +42,7 @@
     "svelte-loader": "^3.1.5",
     "tslib": "^2.5.0",
     "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "vite": "^4.1.0",
+    "vitest": "^0.28.4"
   }
 }
