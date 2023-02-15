@@ -1,5 +1,5 @@
 <script lang ts>
-	const test = 'Hello World! Wow this is a long test';
+	const test = 'Hello World!';
 </script>
 
 <main><h1>{test}</h1></main>

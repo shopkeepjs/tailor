@@ -10,7 +10,8 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint './src/**/*.{js,ts,svelte}'"
+    "lint": "eslint './src/**/*.{js,ts,svelte}'",
+    "fetch-upstream": "git remote add upstream git@github.com:shopkeepjs/adam.git; git fetch upstream svelte && git merge upstream/svelte "
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
