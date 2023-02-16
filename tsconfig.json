@@ -30,6 +30,7 @@
 		"*.js",
 		"*.ts",
 		"**/*.tsx",
-		".eslintrc.cjs"
+		".eslintrc.cjs",
+		"**/*.test.ts"
 	]
 }
