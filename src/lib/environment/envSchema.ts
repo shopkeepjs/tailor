@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { CamelCaseKeys } from '@shopkeep/fletcher';
+import type { CamelCaseKeys } from '@shopkeepjs/fletcher';
 
 export enum EnvNames {
 	NODE_ENV = 'NODE_ENV',
