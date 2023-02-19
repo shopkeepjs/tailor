@@ -1,8 +1,8 @@
 <script lang ts>
-	const test = 'Hello World!';
+	import config from './lib/environment/envLoader';
 </script>
 
-<main><h1>{test}</h1></main>
+<main><h1>{config.superSecret}</h1></main>
 
 <style>
 </style>
