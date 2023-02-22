@@ -1,7 +1,5 @@
 <script lang="ts">
-	function handleClick() {
-		alert('clicked');
-	}
+	const test = () => {};
 </script>
 
-<button on:click={handleClick}> Click me </button>
+<button on:click={test}> Click me </button>
