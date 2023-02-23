@@ -24,6 +24,7 @@ module.exports = {
 		ecmaVersion: 2020,
 		extraFileExtensions: ['.svelte'],
 		project: './tsconfig.json',
+		tsconfigRootDir: __dirname,
 	},
 	env: {
 		browser: true,
@@ -33,11 +34,6 @@ module.exports = {
 	settings: {
 		'import/parsers': {
 			'@typescript-eslint/parser': ['.cjs', '.js', '.ts', '.svelte'],
-		},
-		'import/resolver': {
-			typescript: {
-				alwaysTryTypes: true,
-			},
 		},
 	},
 };

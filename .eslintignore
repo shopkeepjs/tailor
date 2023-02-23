@@ -9,8 +9,7 @@ node_modules
 
 # TODO - this sucks, figure this out later
 src/lib/index.ts
-svelte.config.js
-vite.config.ts
+
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
