@@ -9,17 +9,13 @@ module.exports = {
 		'airbnb-typescript/base',
 		'plugin:prettier/recommended',
 	],
-	plugins: ['@typescript-eslint'],
+	plugins: ['svelte3', '@typescript-eslint'],
 	overrides: [
 		{
 			files: ['**/*.svelte'],
 			parser: 'svelte-eslint-parser',
 			parserOptions: {
 				parser: '@typescript-eslint/parser',
-			},
-			rules: {
-				'import/no-named-as-default': 0,
-				'import/no-named-as-default-member': 0,
 			},
 		},
 	],
@@ -43,15 +39,5 @@ module.exports = {
 				alwaysTryTypes: true,
 			},
 		},
-	},
-	rules: {
-		'arrow-body-style': ['error', 'as-needed'],
-		'prefer-arrow-callback': ['error', { allowNamedFunctions: false, allowUnboundThis: true }],
-		'import/prefer-default-export': 0,
-		'no-param-reassign': 0,
-		'import/extensions': 0,
-		'import/no-extraneous-dependencies': 0,
-		'import/no-mutable-exports': 0,
-		'import/no-duplicates': 0,
 	},
 };
