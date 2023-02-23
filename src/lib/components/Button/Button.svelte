@@ -1,10 +1,10 @@
 <script lang="ts">
 	export let name = 'Button';
-	export let test: string;
+	export let text: string;
 
 	let buttonName = name;
 	const onClick = () => {
-		buttonName = test;
+		buttonName = text;
 	};
 </script>
 
