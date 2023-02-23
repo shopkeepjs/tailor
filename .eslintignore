@@ -6,9 +6,9 @@ node_modules
 .env
 .env.*
 !.env.example
+/dist
 
 # TODO - this sucks, figure this out later
-src/lib/index.ts
 
 
 # Ignore files for PNPM, NPM and YARN

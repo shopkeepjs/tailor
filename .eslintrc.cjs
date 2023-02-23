@@ -17,6 +17,9 @@ module.exports = {
 			parserOptions: {
 				parser: '@typescript-eslint/parser',
 			},
+			rules: {
+				'import/no-mutable-exports': 'off',
+			},
 		},
 	],
 	parserOptions: {
@@ -31,9 +34,7 @@ module.exports = {
 		es2017: true,
 		node: true,
 	},
-	settings: {
-		'import/parsers': {
-			'@typescript-eslint/parser': ['.cjs', '.js', '.ts', '.svelte'],
-		},
+	rules: {
+		'import/prefer-default-export': 'off',
 	},
 };
