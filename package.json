@@ -27,7 +27,8 @@
 	},
 	"files": [
 		"dist",
-		"!*.test.*"
+		"!*.test.*",
+		"!*.stories.*"
 	],
 	"peerDependencies": {
 		"svelte": "^3.54.0"
