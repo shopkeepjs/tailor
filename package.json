@@ -11,7 +11,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"fetch-upstream": "git remote add upstream git@github.com:shopkeepjs/cobbler.git; git fetch upstream sveltekit-library && git merge upstream/sveltekit-library "
 	},
 	"exports": {
 		".": {
