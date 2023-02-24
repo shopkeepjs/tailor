@@ -15,7 +15,10 @@
 		"test:watch": "vitest src",
 		"lint": "eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"fetch-upstream": "git remote add upstream git@github.com:shopkeepjs/cobbler.git; git fetch upstream sveltekit-library && git merge upstream/sveltekit-library "
 	},
 	"exports": {
 		".": {
@@ -31,6 +34,13 @@
 		"svelte": "^3.54.0"
 	},
 	"devDependencies": {
+		"@storybook/addon-essentials": "^7.0.0-beta.53",
+		"@storybook/addon-interactions": "^7.0.0-beta.53",
+		"@storybook/addon-links": "^7.0.0-beta.53",
+		"@storybook/blocks": "^7.0.0-alpha.8",
+		"@storybook/svelte": "^7.0.0-beta.53",
+		"@storybook/sveltekit": "^7.0.0-beta.53",
+		"@storybook/testing-library": "^0.0.14-next.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@sveltejs/package": "^2.0.0",
@@ -44,6 +54,7 @@
 		"eslint-config-airbnb-typescript": "^17.0.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-storybook": "^0.6.11",
 		"eslint-plugin-svelte": "^2.19.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"husky": "^8.0.3",
@@ -51,6 +62,9 @@
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
 		"publint": "^0.1.9",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"storybook": "^7.0.0-beta.53",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"svelte-jester": "^2.3.2",

@@ -1,11 +1,7 @@
 <script lang="ts">
-	export let name = 'Button';
-	export let text: string;
-
-	let buttonName = name;
-	const onClick = () => {
-		buttonName = text;
-	};
+	export let label = '';
 </script>
 
-<button on:click={onClick}>{buttonName}</button>
+<button type="button" on:click>
+	{label}
+</button>
