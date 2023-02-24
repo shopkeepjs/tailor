@@ -21,6 +21,6 @@ describe('it should test all utility functions used', () => {
 			rotate: '2',
 		};
 		const css = parse(csObject);
-		expect(css).toEqual('background-color: purple;min-height: 500px;align-items: left;flex-flow: row;rotate: 2;');
+		expect(css).toEqual('background-color:purple;min-height:500px;align-items:left;flex-flow:row;rotate:2;');
 	});
 });
