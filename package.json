@@ -1,5 +1,5 @@
 {
-	"name": "cobbler",
+	"name": "@shopkeepjs/clothier",
 	"version": "0.2.0",
 	"scripts": {
 		"dev": "vite dev --host",
