@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 
 import { render } from '@testing-library/svelte';
 import { get } from 'svelte/store';
-import ShopkeepThemeProvider from './ShopkeepThemeProvider.svelte';
+import ShopkeepThemeProvider from './ClothierThemeProvider.svelte';
 import { colorStore } from '../store';
 import { purple } from '../design/color';
 

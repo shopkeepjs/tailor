@@ -38,5 +38,7 @@ module.exports = {
 	rules: {
 		'import/prefer-default-export': 'off',
 		'import/no-return-assign': 'off',
+		'import/no-unresolved': [1, { ignore: ['$'] }],
+		'import/no-extraneous-dependencies': 'off',
 	},
 };

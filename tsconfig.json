@@ -22,6 +22,7 @@
 		"src/**/*.stories.ts",
 		".eslintrc.cjs",
 		"svelte.config.js",
-		"vitest.config.ts"
+		"vitest.config.ts",
+		"src/**/*.d.ts"
 	]
 }

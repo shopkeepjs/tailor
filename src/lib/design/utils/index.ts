@@ -32,6 +32,6 @@ export const parse = (styles: Styles) => {
 		// if (key === 'boxShadow' && typeof value === 'string' && typeGuard<Volume>(value, volumes))
 		// 	return (str += `box-shadow: ${boxShadowLookup[value]};`);
 		const property = camelToKebab(key);
-		return `${str}${property}: ${value};`;
+		return `${str}${property}:${value};`;
 	}, '');
 };

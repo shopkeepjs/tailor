@@ -26,8 +26,8 @@
 				})(theme);
 		}
 	};
-	setTheme();
 	onMount(async () => {
+		setTheme();
 		polarity.set(mode || window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 	});
 </script>
@@ -38,10 +38,4 @@
 	<link href="https://fonts.googleapis.com/css2?family=${font}:wght@400;700&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<div id="shopkeep-theme-provider"><slot /></div>
-
-<style>
-	#shopkeep-theme-provider {
-		font-family: 'Montserrat', sans-serif;
-	}
-</style>
+<div style={`font-family:${font}, sans-serif`}><slot /></div>
