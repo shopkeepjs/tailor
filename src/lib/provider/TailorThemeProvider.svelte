@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { colorStore, polarity } from '../store';
-	import type { ColorStrings } from '../design/color/index.d';
+	import type { ColorStrings } from '../design/color';
 
 	export let theme: ColorStrings = 'purple';
 	export let font = 'Montserrat';
