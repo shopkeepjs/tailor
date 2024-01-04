@@ -9,3 +9,11 @@ export default defineConfig({
 		environment: 'jsdom',
 	},
 });
+console.log()
+
+const test = 'test'
+console.log(test)
+
+function test = () => {
+	return true
+}

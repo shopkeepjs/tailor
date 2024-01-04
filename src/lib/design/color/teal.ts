@@ -1,4 +1,4 @@
-import type { ThemeObject } from '.';
+import type { ThemeObject } from './index.d';
 
 const colors: ThemeObject = {
 	light: '#CFF2E3',

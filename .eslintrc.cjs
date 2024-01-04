@@ -20,6 +20,8 @@ module.exports = {
 			},
 			rules: {
 				'import/no-mutable-exports': 'off',
+				'no-undef-init': 'off',
+				'import/extensions': ['error', 'ignorePackages', { '': 'never' }],
 			},
 		},
 	],
